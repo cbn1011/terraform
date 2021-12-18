@@ -1,0 +1,14 @@
+provider "aws" {
+  access_key = "AKIA2ZWHSFNS5HOOXCTP"
+  secret_key = "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"
+  region     = "us-east-1"
+}
+resource "aws_key_pair" "deployer-key" {
+  key_name   = "deployer-key"
+ public_key = file("/root/.ssh/id_rsa.pub")
+}
+resource "aws_instance" "ec2-terr" {
+  ami           = "ami-083654bd07b5da81d"
+  instance_type = "t2.micro"
+  key_name = "deployer-key"
+}
