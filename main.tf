@@ -1,3 +1,4 @@
+#cbncb terra
 provider "aws" {
 region = var.region
 }
