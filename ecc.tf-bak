@@ -12,3 +12,4 @@ resource "aws_instance" "ec2-terr" {
   instance_type = "t2.micro"
   key_name = "deployer-key"
 }
+#
